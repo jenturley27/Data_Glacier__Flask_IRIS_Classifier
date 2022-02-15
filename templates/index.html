@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Iris Species Classification</h1>
+
+     <!-- Main Input For Receiving Query to our program -->
+    <form action="{{ url_for('predict')}}"method="post">
+		<input type="text" name="Sepal_Width" placeholder="Sepal Width in cm (2 to 4) " required="required" />
+        <input type="text" name="Sepal_Length" placeholder="Sepal Length in cm (2 to 7)" required="required" />
+        <input type="text" name="Petal_Width" placeholder="Petal Width in cm (0.2 to 2.5)" required="required" />
+        <input type="text" name="Petal_Length" placeholder="Petal Length in cm (1 to 6)" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Find Iris Type</button>
+    </form>
+   <br>
+   
+   <br>
+
+     {{ prediction_text }}
+
+  </body>
+
+
+
+
+
+<footer>
+  <p>Credit for data: <br> 
+    Dua, D. and Graff, C. (2019). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml] <br>
+    University of California, School of Information and Computer Science, Irvine California </p>
+    
+   
+</footer>
+
+</html>
